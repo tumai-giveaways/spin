@@ -1,0 +1,126 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #2c003e; /* Dark purple */
+    color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.title {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #ffffff; /* Title color set to white */
+}
+
+.wheel-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wheel {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    border: 10px solid #ffffff;
+    border-radius: 50%;
+    overflow: hidden;
+    transform: rotate(0deg);
+    transition: transform 8s cubic-bezier(0.25, 0.1, 0.25, 1); /* Smoother transition */
+}
+
+.segment {
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    background-color: #8a2be2; /* Blue-violet */
+    border: none; /* Remove border */
+    transform-origin: 100% 100%;
+    clip-path: polygon(0 0, 100% 0, 100% 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    color: #ffffff;
+}
+
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none; /* Prevents interfering with wheel rotation */
+    z-index: 2; /* Ensure the question mark appears in front */
+}
+
+.center .question-mark {
+    font-size: 300px; /* Adjust size as needed */
+    color: #ffffff; /* White color */
+    border: none; /* Remove border */
+    outline: none; /* Remove outline */
+}
+
+#spinButton {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    background-color: #ffffff;
+    color: #2c003e;
+    border: none;
+    border-radius: 5px;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    background-color: #2c003e; /* Background color to match the overall design */
+    border: 5px solid #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    color: #ffffff;
+    font-size: 1.5em;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.button-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+#confirmButton {
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    background-color: #8a2be2; /* Blue-violet to match spinner */
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+}
